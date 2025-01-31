@@ -19,7 +19,7 @@ import { NavFavorites } from "@/components/nav-favorites";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavWorkspaces } from "@/components/nav-workspaces";
-import { TeamSwitcher } from "@/components/team-switcher";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -50,7 +50,7 @@ const data = {
   navMain: [
     {
       title: "Search",
-      url: "#",
+      url: "/user/search",
       icon: Search
     },
     {
@@ -272,11 +272,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         />
         <NavMain items={data.navMain} />
       </SidebarHeader>
+
       <SidebarContent>
         <NavFavorites favorites={data.favorites} />
         <NavWorkspaces workspaces={data.workspaces} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
+
       <SidebarRail />
     </Sidebar>
   );
