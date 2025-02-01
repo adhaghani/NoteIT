@@ -4,19 +4,11 @@ import React from "react";
 import { AppSidebar } from "@/components/app-sidebar";
 import { NavActions } from "@/components/nav-actions";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 const PageLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useIsMobile();
@@ -25,7 +17,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
     <SidebarProvider open>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex w-full md:w-[calc(100vw-16rem)] h-14 shrink-0 items-center border-b bg-sidebar gap-2 fixed right-0 top-0">
+        <header className="flex w-full md:w-[calc(100vw-16rem)] h-14 z-40 shrink-0 items-center border-b bg-sidebar gap-2 fixed right-0 top-0">
           <div className="flex flex-1 items-center gap-2 pl-6">
             {isMobile && <SidebarTrigger />}
           </div>

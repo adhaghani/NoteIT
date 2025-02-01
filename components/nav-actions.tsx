@@ -2,28 +2,18 @@
 
 import * as React from "react";
 import {
-  ArrowDown,
-  ArrowUp,
-  Bell,
-  Copy,
-  CornerUpLeft,
-  CornerUpRight,
-  FileText,
   GalleryVerticalEnd,
   LineChart,
   Link,
   MoreHorizontal,
   Settings2,
-  Star,
-  Trash,
-  Trash2
 } from "lucide-react";
 import Clock from "@/components/clock";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger
+  PopoverTrigger,
 } from "@/components/ui/popover";
 import {
   Sidebar,
@@ -32,70 +22,32 @@ import {
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem
+  SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
 const data = [
   [
     {
-      label: "Customize Page",
-      icon: Settings2
+      label: "Settings",
+      icon: Settings2,
     },
-    {
-      label: "Turn into wiki",
-      icon: FileText
-    }
   ],
   [
     {
-      label: "Copy Link",
-      icon: Link
+      label: "Share Notes",
+      icon: Link,
     },
     {
-      label: "Duplicate",
-      icon: Copy
+      label: "Note History",
+      icon: GalleryVerticalEnd,
     },
-    {
-      label: "Move to",
-      icon: CornerUpRight
-    },
-    {
-      label: "Move to Trash",
-      icon: Trash2
-    }
   ],
   [
-    {
-      label: "Undo",
-      icon: CornerUpLeft
-    },
     {
       label: "View analytics",
-      icon: LineChart
+      icon: LineChart,
     },
-    {
-      label: "Version History",
-      icon: GalleryVerticalEnd
-    },
-    {
-      label: "Show delete pages",
-      icon: Trash
-    },
-    {
-      label: "Notifications",
-      icon: Bell
-    }
   ],
-  [
-    {
-      label: "Import",
-      icon: ArrowUp
-    },
-    {
-      label: "Export",
-      icon: ArrowDown
-    }
-  ]
 ];
 
 export function NavActions() {
@@ -104,9 +56,6 @@ export function NavActions() {
   return (
     <div className="flex items-center gap-2 text-sm">
       <Clock />
-      <Button variant="ghost" size="icon" className="h-7 w-7">
-        <Star />
-      </Button>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button

@@ -2,153 +2,134 @@
 
 import * as React from "react";
 import {
-  AudioWaveform,
   Blocks,
   Calendar,
-  Command,
   Home,
-  Inbox,
   MessageCircleQuestion,
   Search,
   Settings2,
-  Sparkles,
-  Trash2
+  Bell,
+  Trash2,
+  Notebook,
 } from "lucide-react";
 
 import { NavFavorites } from "@/components/nav-favorites";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavWorkspaces } from "@/components/nav-workspaces";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
-  SidebarRail
+  SidebarRail,
 } from "@/components/ui/sidebar";
 
 // This is sample data.
 const data = {
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: Command,
-      plan: "Enterprise"
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup"
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free"
-    }
-  ],
   navMain: [
     {
-      title: "Search",
-      url: "/user/search",
-      icon: Search
-    },
-    {
-      title: "Ask AI",
-      url: "#",
-      icon: Sparkles
-    },
-    {
       title: "Home",
-      url: "#",
+      url: "/user/dashboard",
       icon: Home,
-      isActive: true
+      isActive: true,
     },
     {
-      title: "Inbox",
-      url: "#",
-      icon: Inbox,
-      badge: "10"
-    }
+      title: "Search",
+      url: "/user/notes/search",
+      icon: Search,
+    },
+    {
+      title: "Notes",
+      url: "/user/notes",
+      icon: Notebook,
+    },
+
+    {
+      title: "Notification",
+      url: "/user/notifications",
+      icon: Bell,
+      badge: "10",
+    },
   ],
   navSecondary: [
     {
       title: "Calendar",
       url: "#",
-      icon: Calendar
+      icon: Calendar,
     },
     {
       title: "Settings",
       url: "#",
-      icon: Settings2
+      icon: Settings2,
     },
     {
       title: "Templates",
       url: "#",
-      icon: Blocks
+      icon: Blocks,
     },
     {
       title: "Trash",
       url: "#",
-      icon: Trash2
+      icon: Trash2,
     },
     {
       title: "Help",
       url: "#",
-      icon: MessageCircleQuestion
-    }
+      icon: MessageCircleQuestion,
+    },
   ],
   favorites: [
     {
       name: "Project Management & Task Tracking",
       url: "#",
-      emoji: "📊"
+      emoji: "📊",
     },
     {
       name: "Family Recipe Collection & Meal Planning",
       url: "#",
-      emoji: "🍳"
+      emoji: "🍳",
     },
     {
       name: "Fitness Tracker & Workout Routines",
       url: "#",
-      emoji: "💪"
+      emoji: "💪",
     },
     {
       name: "Book Notes & Reading List",
       url: "#",
-      emoji: "📚"
+      emoji: "📚",
     },
     {
       name: "Sustainable Gardening Tips & Plant Care",
       url: "#",
-      emoji: "🌱"
+      emoji: "🌱",
     },
     {
       name: "Language Learning Progress & Resources",
       url: "#",
-      emoji: "🗣️"
+      emoji: "🗣️",
     },
     {
       name: "Home Renovation Ideas & Budget Tracker",
       url: "#",
-      emoji: "🏠"
+      emoji: "🏠",
     },
     {
       name: "Personal Finance & Investment Portfolio",
       url: "#",
-      emoji: "💰"
+      emoji: "💰",
     },
     {
       name: "Movie & TV Show Watchlist with Reviews",
       url: "#",
-      emoji: "🎬"
+      emoji: "🎬",
     },
     {
       name: "Daily Habit Tracker & Goal Setting",
       url: "#",
-      emoji: "✅"
-    }
+      emoji: "✅",
+    },
   ],
   workspaces: [
     {
@@ -158,19 +139,19 @@ const data = {
         {
           name: "Daily Journal & Reflection",
           url: "#",
-          emoji: "📔"
+          emoji: "📔",
         },
         {
           name: "Health & Wellness Tracker",
           url: "#",
-          emoji: "🍏"
+          emoji: "🍏",
         },
         {
           name: "Personal Growth & Learning Goals",
           url: "#",
-          emoji: "🌟"
-        }
-      ]
+          emoji: "🌟",
+        },
+      ],
     },
     {
       name: "Professional Development",
@@ -179,19 +160,19 @@ const data = {
         {
           name: "Career Objectives & Milestones",
           url: "#",
-          emoji: "🎯"
+          emoji: "🎯",
         },
         {
           name: "Skill Acquisition & Training Log",
           url: "#",
-          emoji: "🧠"
+          emoji: "🧠",
         },
         {
           name: "Networking Contacts & Events",
           url: "#",
-          emoji: "🤝"
-        }
-      ]
+          emoji: "🤝",
+        },
+      ],
     },
     {
       name: "Creative Projects",
@@ -200,19 +181,19 @@ const data = {
         {
           name: "Writing Ideas & Story Outlines",
           url: "#",
-          emoji: "✍️"
+          emoji: "✍️",
         },
         {
           name: "Art & Design Portfolio",
           url: "#",
-          emoji: "🖼️"
+          emoji: "🖼️",
         },
         {
           name: "Music Composition & Practice Log",
           url: "#",
-          emoji: "🎵"
-        }
-      ]
+          emoji: "🎵",
+        },
+      ],
     },
     {
       name: "Home Management",
@@ -221,19 +202,19 @@ const data = {
         {
           name: "Household Budget & Expense Tracking",
           url: "#",
-          emoji: "💰"
+          emoji: "💰",
         },
         {
           name: "Home Maintenance Schedule & Tasks",
           url: "#",
-          emoji: "🔧"
+          emoji: "🔧",
         },
         {
           name: "Family Calendar & Event Planning",
           url: "#",
-          emoji: "📅"
-        }
-      ]
+          emoji: "📅",
+        },
+      ],
     },
     {
       name: "Travel & Adventure",
@@ -242,32 +223,32 @@ const data = {
         {
           name: "Trip Planning & Itineraries",
           url: "#",
-          emoji: "🗺️"
+          emoji: "🗺️",
         },
         {
           name: "Travel Bucket List & Inspiration",
           url: "#",
-          emoji: "🌎"
+          emoji: "🌎",
         },
         {
           name: "Travel Journal & Photo Gallery",
           url: "#",
-          emoji: "📸"
-        }
-      ]
-    }
-  ]
+          emoji: "📸",
+        },
+      ],
+    },
+  ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="border-r-0" {...props}>
+    <Sidebar className="border-r-0 z-50" {...props}>
       <SidebarHeader>
         <NavUser
           user={{
             name: "John Doe",
             email: "johndoe@example.com",
-            avatar: "https://github.com/adhaghani.png"
+            avatar: "https://github.com/adhaghani.png",
           }}
         />
         <NavMain items={data.navMain} />
