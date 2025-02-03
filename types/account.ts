@@ -24,15 +24,14 @@ interface SocialLinks {
 }
 
 interface preferences {
-  theme: "light" | "dark" | "system";
-  fontSize: "sm" | "default" | "lg" | "xl";
-  language: string;
+  theme: "light" | "dark";
   timezone: string;
-  defaultNoteSort: "createdAt" | "updatedAt" | "title";
-  defaultEditor: "markdown" | "richText";
   notifications: {
+    isEnabled: boolean;
     email: boolean;
-    push: boolean;
+    activity: boolean;
+    newsLetter: boolean;
+    system: boolean;
     time: "08:00" | "12:00" | "18:00";
   };
 }
