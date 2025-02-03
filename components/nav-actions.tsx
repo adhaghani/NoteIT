@@ -2,18 +2,18 @@
 
 import * as React from "react";
 import {
+  Bell,
   GalleryVerticalEnd,
   LineChart,
   Link,
-  MoreHorizontal,
-  Settings2,
+  MoreHorizontal
 } from "lucide-react";
 import Clock from "@/components/clock";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger
 } from "@/components/ui/popover";
 import {
   Sidebar,
@@ -22,32 +22,26 @@ import {
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
+  SidebarMenuItem
 } from "@/components/ui/sidebar";
 
 const data = [
   [
     {
-      label: "Settings",
-      icon: Settings2,
-    },
-  ],
-  [
-    {
       label: "Share Notes",
-      icon: Link,
+      icon: Link
     },
     {
       label: "Note History",
-      icon: GalleryVerticalEnd,
-    },
+      icon: GalleryVerticalEnd
+    }
   ],
   [
     {
       label: "View analytics",
-      icon: LineChart,
-    },
-  ],
+      icon: LineChart
+    }
+  ]
 ];
 
 export function NavActions() {
@@ -56,6 +50,9 @@ export function NavActions() {
   return (
     <div className="flex items-center gap-2 text-sm">
       <Clock />
+      <Button variant={"ghost"} size={"icon"}>
+        <Bell />
+      </Button>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
