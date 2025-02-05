@@ -30,28 +30,28 @@ interface EmbedContent {
   caption?: string;
 }
 
-type TextContent = {
+interface TextContent {
   type: "text";
   title?: string;
   paragraphs: string[];
-};
+}
 
-type ImageContent = {
+interface ImageContent {
   type: "image";
   url: string;
   altText?: string;
   caption?: string;
-};
+}
 
-type ListContent = {
+interface ListContent {
   type: "list";
   items: string[];
   style: "bullet" | "numbered" | "checklist";
-};
+}
 
-type DividerContent = {
+interface DividerContent {
   type: "divider";
-};
+}
 
 export interface Note {
   id: string;
@@ -66,7 +66,6 @@ export interface Note {
   isPinned?: boolean;
   isPublic?: boolean;
   status?: "draft" | "published" | "archived";
-  priority?: "low" | "medium" | "high";
   createdAt: Date | string;
   updatedAt: Date | string;
   deletedAt?: Date | string;

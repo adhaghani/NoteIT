@@ -27,24 +27,6 @@ import {
 
 // This is sample data.
 const data = {
-  navMain: [
-    {
-      title: "Home",
-      url: "/user/dashboard",
-      icon: Home,
-      isActive: true
-    },
-    {
-      title: "Search",
-      url: "/user/notes/search",
-      icon: Search
-    },
-    {
-      title: "Notes",
-      url: "/user/notes",
-      icon: Notebook
-    }
-  ],
   navSecondary: [
     {
       title: "Calendar",
@@ -244,7 +226,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             avatar: "https://github.com/adhaghani.png"
           }}
         />
-        <NavMain items={data.navMain} />
       </SidebarHeader>
 
       <SidebarContent>

@@ -6,9 +6,10 @@ import { NavActions } from "@/components/nav-actions";
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
+  SidebarTrigger
 } from "@/components/ui/sidebar";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Docker from "@/components/nav-docker";
 
 const PageLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useIsMobile();
@@ -27,6 +28,9 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 max-w-6xl w-full mx-auto py-[5rem]">
           {children}
+          <div className="fixed bottom-5 left-1/2 md:ml-[5%] -translate-x-1/2">
+            <Docker />
+          </div>
         </div>
       </SidebarInset>
     </SidebarProvider>

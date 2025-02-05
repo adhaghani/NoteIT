@@ -1,7 +1,10 @@
-import React from "react";
-
+import { ResetPasswordForm } from "@/components/forgot-password-form";
 const ForgotPassword = () => {
-  return <div>ForgotPassword</div>;
+  return (
+    <div className="w-full max-w-sm md:max-w-3xl">
+      <ResetPasswordForm />
+    </div>
+  );
 };
 
 export default ForgotPassword;

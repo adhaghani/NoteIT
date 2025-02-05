@@ -78,9 +78,9 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
-                <Link href="/user/settings">
+                <Link href="/user/profile">
                   <BadgeCheck />
-                  Account
+                  Profile
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
@@ -90,7 +90,7 @@ export function NavUser({
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/user/settings">
+                <Link href="/user/notification">
                   <Bell />
                   Notifications
                 </Link>

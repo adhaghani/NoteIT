@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import NoteCard from "@/components/note-card";
 import { Text } from "@/components/ui/typograhpy";
-import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 import { Plus, MoreHorizontal } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -13,11 +12,46 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+
+import {
+  MinimalCard,
+  MinimalCardDescription,
+  MinimalCardImage,
+  MinimalCardTitle
+} from "@/components/ui/minimal-card";
 import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
+const cards = [
+  {
+    title: "CSC256 Object Oriented Programming",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "CSC128 Computer Organization",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "CSC126 Data Structures",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "CSC350 Software Engineering",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "CSC365 Web Development",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  }
+];
+
 const NotePage = () => {
   const isMobile = useIsMobile();
   return (
@@ -74,15 +108,25 @@ const NotePage = () => {
           </DropdownMenu>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 my-5">
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+      <div className="flex gap-2 flex-wrap">
+        <Badge>Technology</Badge>
+        <Badge>Development</Badge>
+        <Badge>Front-end Development</Badge>
+        <Badge>Back-End Development</Badge>
+        <Badge>Database</Badge>
       </div>
-      <Separator className="my-5" />
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cards.map((card, index) => (
+          <MinimalCard key={index}>
+            <MinimalCardImage
+              alt="image"
+              src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+            />
+            <MinimalCardTitle>{card.title}</MinimalCardTitle>
+            <MinimalCardDescription>{card.description}</MinimalCardDescription>
+          </MinimalCard>
+        ))}
+      </div>
     </>
   );
 };

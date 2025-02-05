@@ -41,7 +41,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="flex flex-col xl:flex-row gap-4">
+    <div className="flex flex-col gap-4">
       <div className={`w-full md:w-[--sidebar-width]`}>
         {isMobile ? (
           <Drawer>
@@ -72,7 +72,7 @@ const SettingsLayout = ({ children }: { children: React.ReactNode }) => {
             </DrawerContent>
           </Drawer>
         ) : (
-          <ul className="xl:space-y-2 md:flex flex-row xl:flex-col  hidden xl:gap-2">
+          <ul className=" md:flex flex-row  hidden xl:gap-2">
             {SubLink.map((link) => (
               <li
                 key={link.title}

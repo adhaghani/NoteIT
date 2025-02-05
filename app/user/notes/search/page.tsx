@@ -4,9 +4,42 @@ import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Text } from "@/components/ui/typograhpy";
-import NoteCard from "@/components/note-card";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import {
+  MinimalCard,
+  MinimalCardDescription,
+  MinimalCardImage,
+  MinimalCardTitle
+} from "@/components/ui/minimal-card";
+
+const cards = [
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  },
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural."
+  }
+];
 const SearchPage = () => {
   return (
     <div>
@@ -32,13 +65,17 @@ const SearchPage = () => {
           </Link>
         </Button>
       </div>
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 my-10">
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cards.map((card, index) => (
+          <MinimalCard key={index}>
+            <MinimalCardImage
+              alt="image"
+              src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+            />
+            <MinimalCardTitle>{card.title}</MinimalCardTitle>
+            <MinimalCardDescription>{card.description}</MinimalCardDescription>
+          </MinimalCard>
+        ))}
       </div>
     </div>
   );
